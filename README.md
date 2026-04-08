@@ -9,11 +9,11 @@
     <img src="https://i.imgur.com/fL3ybma.png" style="width:40%;">
 </p>
 
-## ?? Sobre o Projeto
+## :books: Sobre o Projeto
 
 Este projeto é uma **versão adaptada e comentada** do [Unity Android Bluetooth Low Energy](https://github.com/Velorexe/Unity-Android-Bluetooth-Low-Energy), modificado especificamente para fins didáticos no curso de **[inserir curso]** da PUC-SP.
 
-### ?? Objetivos de Aprendizado
+### :dart: Objetivos de Aprendizado
 
 - Compreender comunicação **Bluetooth Low Energy (BLE)** em dispositivos Android
 - Integrar **sensores externos** (ex: ESP32, Arduino) com Unity
@@ -23,59 +23,59 @@ Este projeto é uma **versão adaptada e comentada** do [Unity Android Bluetooth L
 
 ---
 
-## ? Funcionalidades
+## :sparkles: Funcionalidades
 
 ### Operações BLE Suportadas
 
-? **Descobrir dispositivos** - Scan de dispositivos BLE próximos  
-? **Conectar/Desconectar** - Gerenciamento de conexão com dispositivo  
-? **Escrever dados** - Envio de comandos para o dispositivo (ex: acender LED)  
-? **Ler dados** - Leitura de valores de características  
-? **Subscrever notificações** - Receber dados em tempo real (ex: sensores)  
+:white_check_mark: **Descobrir dispositivos** - Scan de dispositivos BLE próximos  
+:white_check_mark: **Conectar/Desconectar** - Gerenciamento de conexão com dispositivo  
+:white_check_mark: **Escrever dados** - Envio de comandos para o dispositivo (ex: acender LED)  
+:white_check_mark: **Ler dados** - Leitura de valores de características  
+:white_check_mark: **Subscrever notificações** - Receber dados em tempo real (ex: sensores)  
 
 ### Recursos Adicionais (Modificações PUC-SP)
 
-?? **Documentação completa em português** com XMLDoc  
-?? **Scripts de exemplo comentados** para aprendizado  
-??? **Gerenciamento de permissões** Android 12+  
-?? **Sistema de comunicação bidirecional** simplificado  
-?? **Integração com New Input System** do Unity  
-?? **Interface de usuário intuitiva** para testes  
+:book: **Documentação completa em português** com XMLDoc  
+:mortar_board: **Scripts de exemplo comentados** para aprendizado  
+:shield: **Gerenciamento de permissões** Android 12+  
+:arrows_counterclockwise: **Sistema de comunicação bidirecional** simplificado  
+:video_game: **Integração com New Input System** do Unity  
+:iphone: **Interface de usuário intuitiva** para testes  
 
 ---
 
-## ??? Arquitetura do Projeto
+## :building_construction: Arquitetura do Projeto
 
 ### Como Funciona
 
 ```
 ???????????????????????????????????????????????????????????????
-?         Unity (C#)         ?
+?   Unity (C#)     ?
 ?  ??????????????????  ????????????????  ??????????????????  ?
 ?  ?   BleManager   ????  BleAdapter  ????  BleCommand    ?  ?
 ?  ?   (Singleton)  ?  ?  (Observer)  ?  ?  (Commands)    ?  ?
 ?  ??????????????????  ????????????????  ??????????????????  ?
-?       ?      ?            ?
-?        ????????????????????    ?
-?          ?      ?
-?  ????????????????????????              ?
-?        ?  Android JNI Bridge  ?           ?
-?????????????????????????           ?
-???????????????????????????????????????????????????????????????
+?  ?        ?      ?
+?        ????????????????????         ?
+?       ?                 ?
+?   ????????????????????????     ?
+?         ?  Android JNI Bridge  ?            ?
+?         ????????????????????????        ?
+????????????????????????????????????????????????????????????
+    ?
+????????????????????????????????????????????????????????????
+?              Android BLE Stack                 ?
+?  ????????????????????????????????????????????????????    ?
+?  ?  BluetoothAdapter ? BluetoothGatt ? Characteristics ?  ?
+?  ????????????????????????????????????????????????????    ?
+?????????????????????????????????????????????????????????????
              ?
-???????????????????????????????????????????????????????????????
-?            Android BLE Stack            ?
-?  ?????????????????????????????????????????????????????????? ?
-?  ?  BluetoothAdapter ? BluetoothGatt ? Characteristics   ? ?
-?  ?????????????????????????????????????????????????????????? ?
-???????????????????????????????????????????????????????????????
-        ?
-              ?
+    ?
               ??????????????????
-    ?  Dispositivo   ?
-      ?  BLE Externo   ?
-     ? (ESP32/Arduino)?
- ??????????????????
+   ?  Dispositivo   ?
+            ?  BLE Externo?
+       ? (ESP32/Arduino)?
+            ??????????????????
 ```
 
 ### Componentes Principais
@@ -95,19 +95,19 @@ Este projeto é uma **versão adaptada e comentada** do [Unity Android Bluetooth L
 - Implementa padrão Command com timeout
 - Subclasses: `DiscoverDevices`, `ConnectToDevice`, `SubscribeToCharacteristic`, etc.
 
-#### 4. **ExampleBleInteractor** (`Assets/Example/Scripts/ExampleBleInteractor.cs`) ? NOVO
+#### 4. **ExampleBleInteractor** (`Assets/Example/Scripts/ExampleBleInteractor.cs`) :star: NOVO
 - Script de exemplo completo e comentado
 - Demonstra fluxo completo: Scan ? Connect ? Subscribe
 - Interface visual para testes
 
-#### 5. **GerenciarComunicacao** (`Assets/Example/Scripts/GerenciarComunicacao.cs`) ? NOVO
+#### 5. **GerenciarComunicacao** (`Assets/Example/Scripts/GerenciarComunicacao.cs`) :star: NOVO
 - Gerencia comunicação bidirecional com dispositivo
 - Sistema de callbacks para receber dados
 - Envia comandos com fragmentação automática
 
 ---
 
-## ?? Como Usar
+## :rocket: Como Usar
 
 ### 1?? Pré-requisitos
 
@@ -120,9 +120,9 @@ Este projeto é uma **versão adaptada e comentada** do [Unity Android Bluetooth L
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/masterrey/BLE.git
+git clone https://github.com/masterrey/BLE.git
    cd BLE
-   ```
+ ```
 
 2. Abra o projeto no Unity
 
@@ -172,57 +172,57 @@ void ProcessarDados(string[] dados)
 {
     // ESP32 enviou: "25.5;60.2\n" (temperatura;umidade)
     float temperatura = float.Parse(dados[0]); // 25.5
-    float umidade = float.Parse(dados[1]);     // 60.2
+    float umidade = float.Parse(dados[1]);   // 60.2
     
-  Debug.Log($"Temperatura: {temperatura}°C");
-  Debug.Log($"Umidade: {umidade}%");
+    Debug.Log($"Temperatura: {temperatura}°C");
+    Debug.Log($"Umidade: {umidade}%");
 }
 ```
 
 ---
 
-## ?? Estrutura de Pastas
+## :file_folder: Estrutura de Pastas
 
 ```
 BLE/
 ??? Assets/
-?   ??? Example/       # ?? Exemplos para alunos
-?   ?   ??? Scenes/           # Cenas de demonstração
-?   ?   ??? Scripts/        # Scripts de exemplo comentados
-?   ?       ??? ExampleBleInteractor.cs      # ? Exemplo completo
-?   ?       ??? GerenciarComunicacao.cs      # ? Gerenciador de dados
-?   ?       ??? DeviceButton.cs              # Botão de dispositivo
+?   ??? Example/       # [EXEMPLOS] Para alunos
+?   ?   ??? Scenes/    # Cenas de demonstração
+?   ?   ??? Scripts/    # Scripts de exemplo comentados
+?   ?       ??? ExampleBleInteractor.cs      # [NOVO] Exemplo completo
+?   ?       ??? GerenciarComunicacao.cs # [NOVO] Gerenciador de dados
+?   ?   ??? DeviceButton.cs        # Botão de dispositivo
 ?   ?       ??? NaoDestruirNoCarregamento.cs # Persistência entre cenas
 ?   ?
 ?   ??? Scripts/
-?   ?   ??? BLE/              # Sistema BLE principal
+?   ?   ??? BLE/  # Sistema BLE principal
 ?   ?   ?   ??? BleManager.cs
 ?   ?   ?   ??? BleAdapter.cs
 ?   ?   ?   ??? Commands/     # Comandos BLE
-?   ?   ?   ?   ??? Base/
+?   ?   ?   ? ??? Base/
 ?   ?   ?   ?   ?   ??? BleCommand.cs
-?   ?   ?   ? ??? ConnectToDevice.cs
+?   ?   ?   ?   ??? ConnectToDevice.cs
 ?   ?   ?   ?   ??? DiscoverDevices.cs
 ?   ?   ?   ?   ??? ReadFromCharacteristic.cs
-?   ?   ?   ???? SubscribeToCharacteristic.cs
+?   ?   ?   ?   ??? SubscribeToCharacteristic.cs
 ?   ?   ?   ?   ??? WriteToCharacteristic.cs
-?   ?   ?   ??? Extension/
+?   ?   ? ??? Extension/
 ?   ?   ?       ??? UuidHelper.cs
 ?   ?   ?
-?   ?   ??? ExemploNovoInputSystem.cs        # ?? Exemplo Input System
-?   ?   ??? InicialVerificaPermissoes/       # ? Sistema de permissões
+?   ?   ??? ExemploNovoInputSystem.cs    # [INPUT] Exemplo Input System
+?   ?   ??? InicialVerificaPermissoes/   # [PERMISSOES] Sistema de permissões
 ?   ?
 ?   ??? Plugins/
-?       ??? Android/ # Plugin nativo Android
-?           ??? AndroidManifest.xml
+?       ??? Android/   # Plugin nativo Android
+?    ??? AndroidManifest.xml
 ?           ??? AndroidBlePlugin.aar
 ?
-??? README.md    # ?? Este arquivo
+??? README.md    # Este arquivo
 ```
 
 ---
 
-## ?? Exemplos de Código para Alunos
+## :mortar_board: Exemplos de Código para Alunos
 
 ### Exemplo 1: Conectar e Ler Sensor de Temperatura
 
@@ -237,7 +237,7 @@ public class SensorTemperatura : MonoBehaviour
     
     void Start()
     {
-  // Encontra o gerenciador de comunicação
+        // Encontra o gerenciador de comunicação
         comunicacao = FindObjectOfType<GerenciarComunicacao>();
         
         // Registra callback para receber dados
@@ -247,27 +247,27 @@ public class SensorTemperatura : MonoBehaviour
     void ProcessarTemperatura(string[] dados)
     {
         // ESP32 envia: "TEMP:25.5\n"
-   if (dados[0].StartsWith("TEMP:"))
+        if (dados[0].StartsWith("TEMP:"))
         {
-            string valorStr = dados[0].Replace("TEMP:", "");
+  string valorStr = dados[0].Replace("TEMP:", "");
          float temperatura = float.Parse(valorStr);
-       
-      Debug.Log($"??? Temperatura: {temperatura}°C");
-          
-    // Atualizar UI, mudar cor do ambiente, etc.
- AtualizarVisualizacao(temperatura);
-    }
+            
+            Debug.Log($"[TEMP] Temperatura: {temperatura}°C");
+      
+            // Atualizar UI, mudar cor do ambiente, etc.
+            AtualizarVisualizacao(temperatura);
+        }
     }
     
     void AtualizarVisualizacao(float temp)
     {
         // Exemplo: muda cor do ambiente baseado na temperatura
         if (temp > 30f)
-      RenderSettings.fogColor = Color.red;    // Quente
+        RenderSettings.fogColor = Color.red;    // Quente
         else if (temp < 15f)
-   RenderSettings.fogColor = Color.blue;   // Frio
-else
-            RenderSettings.fogColor = Color.white;  // Normal
+            RenderSettings.fogColor = Color.blue;   // Frio
+        else
+      RenderSettings.fogColor = Color.white;  // Normal
     }
 }
 ```
@@ -284,25 +284,25 @@ public class ControladorLED : MonoBehaviour
     void Start()
     {
         comunicacao = FindObjectOfType<GerenciarComunicacao>();
-    }
-    
+  }
+  
     // Chame este método de um botão UI
     public void LigarLED()
     {
-comunicacao.Enviar("LED:ON");
-        Debug.Log("?? LED ligado!");
+        comunicacao.Enviar("LED:ON");
+        Debug.Log("[LED] LED ligado!");
     }
     
     public void DesligarLED()
     {
-        comunicacao.Enviar("LED:OFF");
- Debug.Log("?? LED desligado!");
+comunicacao.Enviar("LED:OFF");
+        Debug.Log("[LED] LED desligado!");
     }
     
     public void AjustarBrilho(int intensidade) // 0-255
     {
         comunicacao.Enviar($"LED:PWM:{intensidade}");
-   Debug.Log($"?? Brilho ajustado para {intensidade}");
+      Debug.Log($"[LED] Brilho ajustado para {intensidade}");
     }
 }
 ```
@@ -313,7 +313,7 @@ comunicacao.Enviar("LED:ON");
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MonitorCardíaco : MonoBehaviour
+public class MonitorCardiaco : MonoBehaviour
 {
     [SerializeField] private Text textoFrequencia;
     [SerializeField] private Image coracao; // Imagem que pulsa
@@ -322,56 +322,56 @@ public class MonitorCardíaco : MonoBehaviour
     private float frequenciaAtual = 0f;
     
     void Start()
-  {
-        comunicacao = FindObjectOfType<GerenciarComunicacao>();
+    {
+  comunicacao = FindObjectOfType<GerenciarComunicacao>();
         comunicacao.RegistraRecebedor(ProcessarBatimento);
-    }
+ }
     
     void ProcessarBatimento(string[] dados)
     {
-        // Sensor envia: "HR:72\n" (Heart Rate: 72 bpm)
+     // Sensor envia: "HR:72\n" (Heart Rate: 72 bpm)
         if (dados[0].StartsWith("HR:"))
-        {
-  string valorStr = dados[0].Replace("HR:", "");
-            frequenciaAtual = float.Parse(valorStr);
-            
-          AtualizarUI();
-      AnimarCoracao();
-   }
+ {
+       string valorStr = dados[0].Replace("HR:", "");
+         frequenciaAtual = float.Parse(valorStr);
+   
+            AtualizarUI();
+       AnimarCoracao();
+        }
     }
     
-  void AtualizarUI()
+    void AtualizarUI()
     {
-        textoFrequencia.text = $"?? {frequenciaAtual} BPM";
+        textoFrequencia.text = $"<3 {frequenciaAtual} BPM";
     
         // Alerta se frequência anormal
         if (frequenciaAtual > 120f || frequenciaAtual < 50f)
         {
-   textoFrequencia.color = Color.red;
-    Debug.LogWarning($"?? Frequência cardíaca anormal: {frequenciaAtual} BPM");
-        }
-        else
- {
-      textoFrequencia.color = Color.green;
+      textoFrequencia.color = Color.red;
+          Debug.LogWarning($"[ALERTA] Frequência cardíaca anormal: {frequenciaAtual} BPM");
+      }
+else
+        {
+       textoFrequencia.color = Color.green;
         }
     }
 
-    void AnimarCoracao()
+  void AnimarCoracao()
     {
         // Faz o coração pulsar no ritmo dos batimentos
         float intervalo = 60f / frequenciaAtual; // Tempo entre batimentos
         LeanTween.scale(coracao.gameObject, Vector3.one * 1.2f, intervalo * 0.3f)
-.setEaseInOutSine()
-      .setOnComplete(() => {
-          LeanTween.scale(coracao.gameObject, Vector3.one, intervalo * 0.7f);
-        });
+   .setEaseInOutSine()
+          .setOnComplete(() => {
+LeanTween.scale(coracao.gameObject, Vector3.one, intervalo * 0.7f);
+    });
     }
 }
 ```
 
 ---
 
-## ?? Código ESP32 de Exemplo
+## :wrench: Código ESP32 de Exemplo
 
 ```cpp
 #include <BLEDevice.h>
@@ -380,7 +380,7 @@ public class MonitorCardíaco : MonoBehaviour
 #include <BLE2902.h>
 
 // UUIDs (devem coincidir com o Unity)
-#define SERVICE_UUID     "0000ffe0-0000-1000-8000-00805f9b34fb"
+#define SERVICE_UUID        "0000ffe0-0000-1000-8000-00805f9b34fb"
 #define CHARACTERISTIC_UUID "0000ffe1-0000-1000-8000-00805f9b34fb"
 
 BLECharacteristic *pCharacteristic;
@@ -389,14 +389,14 @@ bool deviceConnected = false;
 // Callback de conexão
 class ServerCallbacks: public BLEServerCallbacks {
     void onConnect(BLEServer* pServer) {
- deviceConnected = true;
-      Serial.println("? Cliente Unity conectado!");
+        deviceConnected = true;
+        Serial.println("[OK] Cliente Unity conectado!");
     }
     
     void onDisconnect(BLEServer* pServer) {
-    deviceConnected = false;
-        Serial.println("? Cliente Unity desconectado!");
-  BLEDevice::startAdvertising(); // Reinicia advertising
+   deviceConnected = false;
+        Serial.println("[X] Cliente Unity desconectado!");
+        BLEDevice::startAdvertising(); // Reinicia advertising
     }
 };
 
@@ -406,18 +406,18 @@ class CharacteristicCallbacks: public BLECharacteristicCallbacks {
         std::string value = pChar->getValue();
         
         if (value.length() > 0) {
-            Serial.print("?? Recebido do Unity: ");
-   Serial.println(value.c_str());
-   
-        // Processa comandos
-    if (value == "LED:ON\n") {
+ Serial.print("[RX] Recebido do Unity: ");
+            Serial.println(value.c_str());
+       
+            // Processa comandos
+        if (value == "LED:ON\n") {
    digitalWrite(LED_BUILTIN, HIGH);
-       Serial.println("?? LED ligado");
-            }
-   else if (value == "LED:OFF\n") {
-     digitalWrite(LED_BUILTIN, LOW);
-             Serial.println("?? LED desligado");
-    }
+         Serial.println("[LED] LED ligado");
+  }
+ else if (value == "LED:OFF\n") {
+  digitalWrite(LED_BUILTIN, LOW);
+      Serial.println("[LED] LED desligado");
+   }
         }
     }
 };
@@ -429,19 +429,19 @@ void setup() {
     // Inicializa BLE
     BLEDevice::init("ESP32_BLE"); // Nome que aparece no Unity
     
-    // Cria servidor BLE
-  BLEServer *pServer = BLEDevice::createServer();
- pServer->setCallbacks(new ServerCallbacks());
+ // Cria servidor BLE
+    BLEServer *pServer = BLEDevice::createServer();
+    pServer->setCallbacks(new ServerCallbacks());
     
     // Cria serviço
     BLEService *pService = pServer->createService(SERVICE_UUID);
     
     // Cria característica (READ, WRITE, NOTIFY)
     pCharacteristic = pService->createCharacteristic(
-     CHARACTERISTIC_UUID,
+        CHARACTERISTIC_UUID,
         BLECharacteristic::PROPERTY_READ |
-  BLECharacteristic::PROPERTY_WRITE |
-        BLECharacteristic::PROPERTY_NOTIFY
+        BLECharacteristic::PROPERTY_WRITE |
+      BLECharacteristic::PROPERTY_NOTIFY
     );
     
     pCharacteristic->setCallbacks(new CharacteristicCallbacks());
@@ -454,60 +454,60 @@ void setup() {
     pAdvertising->addServiceUUID(SERVICE_UUID);
     pAdvertising->start();
     
-    Serial.println("?? BLE Server iniciado! Aguardando conexão Unity...");
+    Serial.println("[START] BLE Server iniciado! Aguardando conexão Unity...");
 }
 
 void loop() {
     // Envia temperatura a cada 2 segundos
     if (deviceConnected) {
-        float temperatura = random(20, 30) + random(0, 100) / 100.0;
- 
-  String dados = String(temperatura) + ";100.0\n"; // temp;umidade
-    pCharacteristic->setValue(dados.c_str());
-pCharacteristic->notify();
-   
-        Serial.print("?? Enviado para Unity: ");
+    float temperatura = random(20, 30) + random(0, 100) / 100.0;
+        
+        String dados = String(temperatura) + ";100.0\n"; // temp;umidade
+        pCharacteristic->setValue(dados.c_str());
+        pCharacteristic->notify();
+        
+     Serial.print("[TX] Enviado para Unity: ");
         Serial.println(dados);
         
-        delay(2000);
+  delay(2000);
     }
 }
 ```
 
 ---
 
-## ?? Problemas Comuns e Soluções
+## :warning: Problemas Comuns e Soluções
 
 ### 1. "Dispositivo não encontrado"
-- ? Verifique se o Bluetooth está ligado no celular
-- ? Certifique-se de que o nome do dispositivo está **exatamente igual** (case-sensitive)
-- ? Aproxime o celular do dispositivo BLE (máximo 10 metros)
-- ? Reinicie o ESP32/Arduino
+- :white_check_mark: Verifique se o Bluetooth está ligado no celular
+- :white_check_mark: Certifique-se de que o nome do dispositivo está **exatamente igual** (case-sensitive)
+- :white_check_mark: Aproxime o celular do dispositivo BLE (máximo 10 metros)
+- :white_check_mark: Reinicie o ESP32/Arduino
 
 ### 2. "Permissões negadas"
-- ? Vá em Configurações ? Apps ? [Seu App] ? Permissões
-- ? Ative "Localização" e "Dispositivos Próximos"
-- ? No Android 12+, a permissão de localização é obrigatória para BLE
+- :white_check_mark: Vá em Configurações ? Apps ? [Seu App] ? Permissões
+- :white_check_mark: Ative "Localização" e "Dispositivos Próximos"
+- :white_check_mark: No Android 12+, a permissão de localização é obrigatória para BLE
 
 ### 3. "Conecta mas não recebe dados"
-- ? Verifique se o UUIDs do serviço/característica estão corretos
-- ? Confirme que o ESP32 está enviando dados com `notify()`
-- ? Verifique se registrou o callback com `RegistraRecebedor()`
+- :white_check_mark: Verifique se o UUIDs do serviço/característica estão corretos
+- :white_check_mark: Confirme que o ESP32 está enviando dados com `notify()`
+- :white_check_mark: Verifique se registrou o callback com `RegistraRecebedor()`
 
 ### 4. "Dados recebidos cortados ou estranhos"
-- ? BLE limita a 20 bytes por transmissão
-- ? Use delimitadores claros (`;`, `\n`)
-- ? Adicione `\n` no final de cada mensagem
-- ? Use `EnviarDadosGrandes()` para mensagens longas
+- :white_check_mark: BLE limita a 20 bytes por transmissão
+- :white_check_mark: Use delimitadores claros (`;`, `\n`)
+- :white_check_mark: Adicione `\n` no final de cada mensagem
+- :white_check_mark: Use `EnviarDadosGrandes()` para mensagens longas
 
 ### 5. "Aplicativo fecha ao conectar"
-- ? Verifique logs no Logcat (Android Studio)
-- ? Certifique-se de estar rodando em dispositivo físico (não emulador)
-- ? Verifique se o plugin `.aar` está na pasta correta
+- :white_check_mark: Verifique logs no Logcat (Android Studio)
+- :white_check_mark: Certifique-se de estar rodando em dispositivo físico (não emulador)
+- :white_check_mark: Verifique se o plugin `.aar` está na pasta correta
 
 ---
 
-## ?? Documentação Adicional
+## :book: Documentação Adicional
 
 ### Artigos Recomendados
 - [Creating an Android BLE plugin for Unity](https://velorexe.com/posts/unity-bluetooth-low-energy/) - Artigo original do criador
@@ -520,7 +520,7 @@ pCharacteristic->notify();
 
 ---
 
-## ????? Para Professores
+## :teacher: Para Professores
 
 ### Sugestões de Exercícios
 
@@ -538,7 +538,7 @@ pCharacteristic->notify();
 
 ---
 
-## ?? Contribuindo
+## :handshake: Contribuindo
 
 Alunos e professores são encorajados a contribuir com melhorias!
 
@@ -550,7 +550,7 @@ Alunos e professores são encorajados a contribuir com melhorias!
 
 ---
 
-## ?? Créditos
+## :scroll: Créditos
 
 ### Projeto Original
 - **Unity Android Bluetooth Low Energy** por [Velorexe](https://github.com/Velorexe)
@@ -564,7 +564,7 @@ Alunos e professores são encorajados a contribuir com melhorias!
 
 ---
 
-## ?? Contato
+## :email: Contato
 
 ### Dúvidas sobre o Projeto
 - Crie uma **Issue** neste repositório
@@ -576,13 +576,13 @@ Alunos e professores são encorajados a contribuir com melhorias!
 
 ---
 
-## ?? Licença
+## :page_facing_up: Licença
 
 Este projeto mantém a licença do projeto original. Livre para uso educacional.
 
 ---
 
 <p align="center">
-    <b>Desenvolvido para os alunos da PUC-SP ??</b><br>
- <i>Bons estudos e mãos à obra! ??</i>
+    <b>Desenvolvido para os alunos da PUC-SP :mortar_board:</b><br>
+    <i>Bons estudos e mãos à obra! :rocket:</i>
 </p>
