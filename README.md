@@ -2,7 +2,7 @@
 
 <p align="center">
   <b>Projeto educacional de Bluetooth Low Energy para Unity Android</b><br>
-    <i>Adaptado para os alunos da Pontifícia Universidade Católica de São Paulo (PUC-SP)</i>
+    <i>Adaptado para os alunos da PontifÃ­cia Universidade CatÃ³lica de SÃ£o Paulo (PUC-SP)</i>
 </p>
 
 <p align="center">
@@ -11,36 +11,36 @@
 
 ## :books: Sobre o Projeto
 
-Este projeto é uma **versão adaptada e comentada** do [Unity Android Bluetooth Low Energy](https://github.com/Velorexe/Unity-Android-Bluetooth-Low-Energy), modificado especificamente para fins didáticos no curso de **[inserir curso]** da PUC-SP.
+Este projeto Ã© uma **versÃ£o adaptada e comentada** do [Unity Android Bluetooth Low Energy](https://github.com/Velorexe/Unity-Android-Bluetooth-Low-Energy), modificado especificamente para fins didÃ¡ticos no curso da PUC-SP.
 
 ### :dart: Objetivos de Aprendizado
 
-- Compreender comunicação **Bluetooth Low Energy (BLE)** em dispositivos Android
+- Compreender comunicaÃ§Ã£o **Bluetooth Low Energy (BLE)** em dispositivos Android
 - Integrar **sensores externos** (ex: ESP32, Arduino) com Unity
-- Desenvolver aplicações **VR/AR** que interagem com hardware físico
-- Aplicar padrões de projeto (Command Pattern, Observer Pattern, Singleton)
-- Gerenciar permissões Android em tempo de execução
+- Desenvolver aplicaÃ§Ãµes **VR/AR** que interagem com hardware fÃ­sico
+- Aplicar padrÃµes de projeto (Command Pattern, Observer Pattern, Singleton)
+- Gerenciar permissÃµes Android em tempo de execuÃ§Ã£o
 
 ---
 
 ## :sparkles: Funcionalidades
 
-### Operações BLE Suportadas
+### OperaÃ§Ãµes BLE Suportadas
 
-:white_check_mark: **Descobrir dispositivos** - Scan de dispositivos BLE próximos  
-:white_check_mark: **Conectar/Desconectar** - Gerenciamento de conexão com dispositivo  
+:white_check_mark: **Descobrir dispositivos** - Scan de dispositivos BLE prï¿½ximos  
+:white_check_mark: **Conectar/Desconectar** - Gerenciamento de conexï¿½o com dispositivo  
 :white_check_mark: **Escrever dados** - Envio de comandos para o dispositivo (ex: acender LED)  
-:white_check_mark: **Ler dados** - Leitura de valores de características  
-:white_check_mark: **Subscrever notificações** - Receber dados em tempo real (ex: sensores)  
+:white_check_mark: **Ler dados** - Leitura de valores de caracterï¿½sticas  
+:white_check_mark: **Subscrever notificaï¿½ï¿½es** - Receber dados em tempo real (ex: sensores)  
 
-### Recursos Adicionais (Modificações PUC-SP)
+### Recursos Adicionais (ModificaÃ§Ãµes PUC-SP)
 
-:book: **Documentação completa em português** com XMLDoc  
+:book: **Documentaï¿½ï¿½o completa em portuguï¿½s** com XMLDoc  
 :mortar_board: **Scripts de exemplo comentados** para aprendizado  
-:shield: **Gerenciamento de permissões** Android 12+  
-:arrows_counterclockwise: **Sistema de comunicação bidirecional** simplificado  
-:video_game: **Integração com New Input System** do Unity  
-:iphone: **Interface de usuário intuitiva** para testes  
+:shield: **Gerenciamento de permissï¿½es** Android 12+  
+:arrows_counterclockwise: **Sistema de comunicaï¿½ï¿½o bidirecional** simplificado  
+:video_game: **Integraï¿½ï¿½o com New Input System** do Unity  
+:iphone: **Interface de usuï¿½rio intuitiva** para testes  
 
 ---
 
@@ -81,8 +81,8 @@ Este projeto é uma **versão adaptada e comentada** do [Unity Android Bluetooth L
 ### Componentes Principais
 
 #### 1. **BleManager** (`Assets/Scripts/BLE/BleManager.cs`)
-- Singleton que gerencia todas as operações BLE
-- Fila de comandos para execução sequencial
+- Singleton que gerencia todas as operaÃ§Ãµes BLE
+- Fila de comandos para execuÃ§Ã£o sequencial
 - Interface entre Unity e plugin Android
 
 #### 2. **BleAdapter** (`Assets/Scripts/BLE/BleAdapter.cs`)
@@ -91,8 +91,8 @@ Este projeto é uma **versão adaptada e comentada** do [Unity Android Bluetooth L
 - Distribui eventos para os comandos apropriados
 
 #### 3. **BleCommand** (`Assets/Scripts/BLE/Commands/Base/BleCommand.cs`)
-- Classe abstrata para todas as operações BLE
-- Implementa padrão Command com timeout
+- Classe abstrata para todas as operaÃ§Ãµes BLE
+- Implementa padrÃ£o Command com timeout
 - Subclasses: `DiscoverDevices`, `ConnectToDevice`, `SubscribeToCharacteristic`, etc.
 
 #### 4. **ExampleBleInteractor** (`Assets/Example/Scripts/ExampleBleInteractor.cs`) :star: NOVO
@@ -101,24 +101,24 @@ Este projeto é uma **versão adaptada e comentada** do [Unity Android Bluetooth L
 - Interface visual para testes
 
 #### 5. **GerenciarComunicacao** (`Assets/Example/Scripts/GerenciarComunicacao.cs`) :star: NOVO
-- Gerencia comunicação bidirecional com dispositivo
+- Gerencia comunicaï¿½ï¿½o bidirecional com dispositivo
 - Sistema de callbacks para receber dados
-- Envia comandos com fragmentação automática
+- Envia comandos com fragmentaÃ§Ã£o automÃ¡tica
 
 ---
 
 ## :rocket: Como Usar
 
-### 1?? Pré-requisitos
+### 1?? PrÃ©-requisitos
 
 - **Unity 2020.3+** (testado com 2021.3 LTS)
 - **Android SDK** com API Level 21+ (Android 5.0)
-- **Dispositivo Android físico** (BLE não funciona no emulador)
+- **Dispositivo Android fÃ­sico** (BLE nÃ£o funciona no emulador)
 - **Dispositivo BLE** (ESP32, Arduino Nano 33 BLE, etc.)
 
-### 2?? Configuração Inicial
+### 2?? ConfiguraÃ§Ã£o Inicial
 
-1. Clone o repositório:
+1. Clone o repositÃ³rio:
    ```bash
 git clone https://github.com/masterrey/BLE.git
    cd BLE
@@ -126,8 +126,8 @@ git clone https://github.com/masterrey/BLE.git
 
 2. Abra o projeto no Unity
 
-3. Configure as permissões Android:
-   - O projeto já está configurado com as permissões necessárias
+3. Configure as permissÃµes Android:
+   - O projeto jÃ¡ estÃ¡ configurado com as permissÃµes necessÃ¡rias
    - Verifique `Assets/Plugins/Android/AndroidManifest.xml`
 
 4. Configure seu dispositivo BLE:
@@ -136,11 +136,11 @@ git clone https://github.com/masterrey/BLE.git
    private string nomeBlueTooth = "ESP32_BLE"; // Mude para o nome do seu dispositivo
    ```
 
-### 3?? Testando a Conexão
+### 3?? Testando a ConexÃ£o
 
 1. **Prepare seu dispositivo BLE**
-   - Programe um ESP32/Arduino com serviço BLE
-   - Use UUIDs padrão: Serviço `ffe0`, Característica `ffe1`
+   - Programe um ESP32/Arduino com serviÃ§o BLE
+   - Use UUIDs padrÃ£o: ServiÃ§o `ffe0`, CaracterÃ­stica `ffe1`
 
 2. **Build para Android**
    - File ? Build Settings ? Android
@@ -150,7 +150,7 @@ git clone https://github.com/masterrey/BLE.git
    - Permita acesso Bluetooth quando solicitado
    - Digite o nome do dispositivo BLE
    - Clique em "Scan"
-   - Aguarde a conexão automática
+   - Aguarde a conexÃ£o automÃ¡tica
 
 ### 4?? Enviando e Recebendo Dados
 
@@ -174,7 +174,7 @@ void ProcessarDados(string[] dados)
     float temperatura = float.Parse(dados[0]); // 25.5
     float umidade = float.Parse(dados[1]);   // 60.2
     
-    Debug.Log($"Temperatura: {temperatura}°C");
+    Debug.Log($"Temperatura: {temperatura}ï¿½C");
     Debug.Log($"Umidade: {umidade}%");
 }
 ```
@@ -187,12 +187,12 @@ void ProcessarDados(string[] dados)
 BLE/
 ??? Assets/
 ?   ??? Example/       # [EXEMPLOS] Para alunos
-?   ?   ??? Scenes/    # Cenas de demonstração
+?   ?   ??? Scenes/    # Cenas de demonstraï¿½ï¿½o
 ?   ?   ??? Scripts/    # Scripts de exemplo comentados
 ?   ?       ??? ExampleBleInteractor.cs      # [NOVO] Exemplo completo
 ?   ?       ??? GerenciarComunicacao.cs # [NOVO] Gerenciador de dados
-?   ?   ??? DeviceButton.cs        # Botão de dispositivo
-?   ?       ??? NaoDestruirNoCarregamento.cs # Persistência entre cenas
+?   ?   ??? DeviceButton.cs        # Botï¿½o de dispositivo
+?   ?       ??? NaoDestruirNoCarregamento.cs # Persistï¿½ncia entre cenas
 ?   ?
 ?   ??? Scripts/
 ?   ?   ??? BLE/  # Sistema BLE principal
@@ -210,7 +210,7 @@ BLE/
 ?   ?   ?       ??? UuidHelper.cs
 ?   ?   ?
 ?   ?   ??? ExemploNovoInputSystem.cs    # [INPUT] Exemplo Input System
-?   ?   ??? InicialVerificaPermissoes/   # [PERMISSOES] Sistema de permissões
+?   ?   ??? InicialVerificaPermissoes/   # [PERMISSOES] Sistema de permissï¿½es
 ?   ?
 ?   ??? Plugins/
 ?       ??? Android/   # Plugin nativo Android
@@ -222,7 +222,7 @@ BLE/
 
 ---
 
-## :mortar_board: Exemplos de Código para Alunos
+## :mortar_board: Exemplos de Cï¿½digo para Alunos
 
 ### Exemplo 1: Conectar e Ler Sensor de Temperatura
 
@@ -237,7 +237,7 @@ public class SensorTemperatura : MonoBehaviour
     
     void Start()
     {
-        // Encontra o gerenciador de comunicação
+        // Encontra o gerenciador de comunicaï¿½ï¿½o
         comunicacao = FindObjectOfType<GerenciarComunicacao>();
         
         // Registra callback para receber dados
@@ -252,7 +252,7 @@ public class SensorTemperatura : MonoBehaviour
   string valorStr = dados[0].Replace("TEMP:", "");
          float temperatura = float.Parse(valorStr);
             
-            Debug.Log($"[TEMP] Temperatura: {temperatura}°C");
+            Debug.Log($"[TEMP] Temperatura: {temperatura}ï¿½C");
       
             // Atualizar UI, mudar cor do ambiente, etc.
             AtualizarVisualizacao(temperatura);
@@ -286,7 +286,7 @@ public class ControladorLED : MonoBehaviour
         comunicacao = FindObjectOfType<GerenciarComunicacao>();
   }
   
-    // Chame este método de um botão UI
+    // Chame este mï¿½todo de um botï¿½o UI
     public void LigarLED()
     {
         comunicacao.Enviar("LED:ON");
@@ -307,7 +307,7 @@ comunicacao.Enviar("LED:OFF");
 }
 ```
 
-### Exemplo 3: Sistema de Batimentos Cardíacos (VR Saúde)
+### Exemplo 3: Sistema de Batimentos CardÃ­acos (VR SaÃºde)
 
 ```csharp
 using UnityEngine;
@@ -344,11 +344,11 @@ public class MonitorCardiaco : MonoBehaviour
     {
         textoFrequencia.text = $"<3 {frequenciaAtual} BPM";
     
-        // Alerta se frequência anormal
+        // Alerta se frequÃªncia anormal
         if (frequenciaAtual > 120f || frequenciaAtual < 50f)
         {
       textoFrequencia.color = Color.red;
-          Debug.LogWarning($"[ALERTA] Frequência cardíaca anormal: {frequenciaAtual} BPM");
+          Debug.LogWarning($"[ALERTA] Frequï¿½ncia cardï¿½aca anormal: {frequenciaAtual} BPM");
       }
 else
         {
@@ -358,7 +358,7 @@ else
 
   void AnimarCoracao()
     {
-        // Faz o coração pulsar no ritmo dos batimentos
+        // Faz o coraÃ§Ã£o pulsar no ritmo dos batimentos
         float intervalo = 60f / frequenciaAtual; // Tempo entre batimentos
         LeanTween.scale(coracao.gameObject, Vector3.one * 1.2f, intervalo * 0.3f)
    .setEaseInOutSine()
@@ -371,7 +371,7 @@ LeanTween.scale(coracao.gameObject, Vector3.one, intervalo * 0.7f);
 
 ---
 
-## :wrench: Código ESP32 de Exemplo
+## :wrench: Cï¿½digo ESP32 de Exemplo
 
 ```cpp
 #include <BLEDevice.h>
@@ -386,7 +386,7 @@ LeanTween.scale(coracao.gameObject, Vector3.one, intervalo * 0.7f);
 BLECharacteristic *pCharacteristic;
 bool deviceConnected = false;
 
-// Callback de conexão
+// Callback de conexÃ£o
 class ServerCallbacks: public BLEServerCallbacks {
     void onConnect(BLEServer* pServer) {
         deviceConnected = true;
@@ -433,10 +433,10 @@ void setup() {
     BLEServer *pServer = BLEDevice::createServer();
     pServer->setCallbacks(new ServerCallbacks());
     
-    // Cria serviço
+    // Cria serviÃ§o
     BLEService *pService = pServer->createService(SERVICE_UUID);
     
-    // Cria característica (READ, WRITE, NOTIFY)
+    // Cria caracterÃ­stica (READ, WRITE, NOTIFY)
     pCharacteristic = pService->createCharacteristic(
         CHARACTERISTIC_UUID,
         BLECharacteristic::PROPERTY_READ |
@@ -447,14 +447,14 @@ void setup() {
     pCharacteristic->setCallbacks(new CharacteristicCallbacks());
     pCharacteristic->addDescriptor(new BLE2902());
     
-    // Inicia serviço e advertising
+    // Inicia serviÃ§o e advertising
     pService->start();
     
     BLEAdvertising *pAdvertising = BLEDevice::getAdvertising();
     pAdvertising->addServiceUUID(SERVICE_UUID);
     pAdvertising->start();
     
-    Serial.println("[START] BLE Server iniciado! Aguardando conexão Unity...");
+    Serial.println("[START] BLE Server iniciado! Aguardando conexï¿½o Unity...");
 }
 
 void loop() {
@@ -476,45 +476,45 @@ void loop() {
 
 ---
 
-## :warning: Problemas Comuns e Soluções
+## :warning: Problemas Comuns e Soluï¿½ï¿½es
 
-### 1. "Dispositivo não encontrado"
-- :white_check_mark: Verifique se o Bluetooth está ligado no celular
-- :white_check_mark: Certifique-se de que o nome do dispositivo está **exatamente igual** (case-sensitive)
-- :white_check_mark: Aproxime o celular do dispositivo BLE (máximo 10 metros)
+### 1. "Dispositivo nï¿½o encontrado"
+- :white_check_mark: Verifique se o Bluetooth estï¿½ ligado no celular
+- :white_check_mark: Certifique-se de que o nome do dispositivo estï¿½ **exatamente igual** (case-sensitive)
+- :white_check_mark: Aproxime o celular do dispositivo BLE (mï¿½ximo 10 metros)
 - :white_check_mark: Reinicie o ESP32/Arduino
 
-### 2. "Permissões negadas"
-- :white_check_mark: Vá em Configurações ? Apps ? [Seu App] ? Permissões
-- :white_check_mark: Ative "Localização" e "Dispositivos Próximos"
-- :white_check_mark: No Android 12+, a permissão de localização é obrigatória para BLE
+### 2. "Permissï¿½es negadas"
+- :white_check_mark: Vï¿½ em Configuraï¿½ï¿½es ? Apps ? [Seu App] ? Permissï¿½es
+- :white_check_mark: Ative "Localizaï¿½ï¿½o" e "Dispositivos Prï¿½ximos"
+- :white_check_mark: No Android 12+, a permissï¿½o de localizaï¿½ï¿½o ï¿½ obrigatï¿½ria para BLE
 
-### 3. "Conecta mas não recebe dados"
-- :white_check_mark: Verifique se o UUIDs do serviço/característica estão corretos
-- :white_check_mark: Confirme que o ESP32 está enviando dados com `notify()`
+### 3. "Conecta mas nï¿½o recebe dados"
+- :white_check_mark: Verifique se o UUIDs do serviï¿½o/caracterï¿½stica estï¿½o corretos
+- :white_check_mark: Confirme que o ESP32 estï¿½ enviando dados com `notify()`
 - :white_check_mark: Verifique se registrou o callback com `RegistraRecebedor()`
 
 ### 4. "Dados recebidos cortados ou estranhos"
-- :white_check_mark: BLE limita a 20 bytes por transmissão
+- :white_check_mark: BLE limita a 20 bytes por transmissï¿½o
 - :white_check_mark: Use delimitadores claros (`;`, `\n`)
 - :white_check_mark: Adicione `\n` no final de cada mensagem
 - :white_check_mark: Use `EnviarDadosGrandes()` para mensagens longas
 
 ### 5. "Aplicativo fecha ao conectar"
 - :white_check_mark: Verifique logs no Logcat (Android Studio)
-- :white_check_mark: Certifique-se de estar rodando em dispositivo físico (não emulador)
-- :white_check_mark: Verifique se o plugin `.aar` está na pasta correta
+- :white_check_mark: Certifique-se de estar rodando em dispositivo fï¿½sico (nï¿½o emulador)
+- :white_check_mark: Verifique se o plugin `.aar` estï¿½ na pasta correta
 
 ---
 
-## :book: Documentação Adicional
+## :book: Documentaï¿½ï¿½o Adicional
 
 ### Artigos Recomendados
 - [Creating an Android BLE plugin for Unity](https://velorexe.com/posts/unity-bluetooth-low-energy/) - Artigo original do criador
-- [Bluetooth Low Energy - Documentação Android](https://developer.android.com/guide/topics/connectivity/bluetooth-le)
+- [Bluetooth Low Energy - DocumentaÃ§Ã£o Android](https://developer.android.com/guide/topics/connectivity/bluetooth-le)
 - [ESP32 BLE Arduino Tutorial](https://randomnerdtutorials.com/esp32-bluetooth-low-energy-ble-arduino-ide/)
 
-### Vídeos Úteis
+### VÃ­deos Ãšteis
 - [Unity Android BLE Tutorial](https://www.youtube.com/results?search_query=unity+android+ble)
 - [ESP32 BLE Basics](https://www.youtube.com/results?search_query=esp32+ble+tutorial)
 
@@ -522,52 +522,52 @@ void loop() {
 
 ## :teacher: Para Professores
 
-### Sugestões de Exercícios
+### SugestÃµes de ExercÃ­cios
 
-1. **Básico**: Conectar ao ESP32 e fazer um LED piscar via Unity
-2. **Intermediário**: Criar interface que mostra temperatura em tempo real
-3. **Avançado**: Desenvolver aplicação VR que responde a sensor de batimentos cardíacos
-4. **Projeto Final**: Sistema completo de reabilitação com múltiplos sensores
+1. **BÃ¡sico**: Conectar ao ESP32 e fazer um LED piscar via Unity
+2. **IntermediÃ¡rio**: Criar interface que mostra temperatura em tempo real
+3. **AvanÃ§ado**: Desenvolver aplicaÃ§Ã£o VR que responde a sensor de batimentos cardÃ­acos
+4. **Projeto Final**: Sistema completo de reabilitaÃ§Ã£o com mÃºltiplos sensores
 
-### Avaliação Sugerida
-- Conexão bem-sucedida (20%)
+### AvaliaÃ§Ã£o Sugerida
+- ConexÃ£o bem-sucedida (20%)
 - Envio/recebimento de dados (30%)
-- Interface de usuário (20%)
-- Documentação do código (15%)
-- Criatividade na aplicação (15%)
+- Interface de usuÃ¡rio (20%)
+- DocumentaÃ§Ã£o do cÃ³digo (15%)
+- Criatividade na aplicaÃ§Ã£o (15%)
 
 ---
 
 ## :handshake: Contribuindo
 
-Alunos e professores são encorajados a contribuir com melhorias!
+Alunos e professores sÃ£o encorajados a contribuir com melhorias!
 
 1. Fork o projeto
 2. Crie uma branch para sua feature (`git checkout -b feature/MinhaFeature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona MinhaFeature'`)
+3. Commit suas mudanÃ§as (`git commit -m 'Adiciona MinhaFeature'`)
 4. Push para a branch (`git push origin feature/MinhaFeature`)
 5. Abra um Pull Request
 
 ---
 
-## :scroll: Créditos
+## :scroll: Crï¿½ditos
 
 ### Projeto Original
 - **Unity Android Bluetooth Low Energy** por [Velorexe](https://github.com/Velorexe)
-- Repositório original: https://github.com/Velorexe/Unity-Android-Bluetooth-Low-Energy
+- RepositÃ³rio original: https://github.com/Velorexe/Unity-Android-Bluetooth-Low-Energy
 
-### Adaptação PUC-SP
-- Documentação em português
+### AdaptaÃ§Ã£o PUC-SP
+- DocumentaÃ§Ã£o em portuguÃªs
 - Scripts de exemplo educacionais
-- Sistema de permissões Android 12+
-- Exemplos de integração com sensores
+- Sistema de permissÃµes Android 12+
+- Exemplos de integraÃ§Ã£o com sensores
 
 ---
 
 ## :email: Contato
 
-### Dúvidas sobre o Projeto
-- Crie uma **Issue** neste repositório
+### DÃºvidas sobre o Projeto
+- Crie uma **Issue** neste repositÃ³rio
 - Email: degenerexe.code@gmail.com
 
 ### Projeto Original
@@ -576,13 +576,13 @@ Alunos e professores são encorajados a contribuir com melhorias!
 
 ---
 
-## :page_facing_up: Licença
+## :page_facing_up: Licenï¿½a
 
-Este projeto mantém a licença do projeto original. Livre para uso educacional.
+Este projeto mantÃ©m a licenÃ§a do projeto original. Livre para uso educacional.
 
 ---
 
 <p align="center">
     <b>Desenvolvido para os alunos da PUC-SP :mortar_board:</b><br>
-    <i>Bons estudos e mãos à obra! :rocket:</i>
+    <i>Bons estudos e mï¿½os ï¿½ obra! :rocket:</i>
 </p>
