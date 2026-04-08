@@ -1,7 +1,4 @@
-// ESTE ARQUIVO VAI GERAR ERROS ATÉ VOCÊ ABRIR O UNITY E ELE IMPORTAR O PACOTE INPUT SYSTEM
-// Após abrir o Unity e reiniciar, os erros desaparecerão automaticamente
 
-/*
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.EnhancedTouch;
@@ -310,6 +307,4 @@ if (mostrarLogs)
     // }
     }
 }
-*/
 
-// REMOVA O COMENTÁRIO ACIMA APÓS ABRIR O UNITY E REINICIAR!
