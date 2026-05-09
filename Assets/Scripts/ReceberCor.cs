@@ -7,30 +7,27 @@ public class ReceberCor : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Scene 2 iniciou");
+        texto.text = "Scene 2 iniciou";
 
         var gc = FindFirstObjectByType<GerenciarComunicacao>();
 
         if (gc != null)
         {
-            Debug.Log("✅ GerenciarComunicacao encontrado");
+            texto.text = "GC encontrado";
+
             gc.RegistraRecebedor(OnDadosRecebidos);
         }
         else
         {
-            Debug.LogError("❌ GerenciarComunicacao NÃO encontrado");
+            texto.text = "GC NÃO encontrado";
         }
     }
 
     void OnDadosRecebidos(string[] dados)
     {
-        Debug.Log("📨 Dados chegaram");
-
         if (dados.Length > 0)
         {
             string cor = dados[0];
-
-            Debug.Log("🎨 Cor recebida: " + cor);
 
             texto.text = cor;
         }
